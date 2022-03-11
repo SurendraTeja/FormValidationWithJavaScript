@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Date Validation With JavaScript</title>
+</head>
+<body>
+		<center>
+			<h2>Date Validation In JavaScript</h2>
+			<form action="success.html" name="myform" method="post" onsubmit="return validateDate()">
+					Date:<input type="date" name="date1" required><p></p>
+					<input type="submit" value="submit">
+			</form>
+		</center>
+		<script type="text/javascript">
+			function validateDate(){
+				var currentdate=new Date();
+				var userdate=new Date(document.myform.date1.value);
+				if(userdate>currentdate){
+					alert("Please Enter Valid Date of Birth");
+					return false;
+				}
+			}
+			</script>
+</body>
+</html>

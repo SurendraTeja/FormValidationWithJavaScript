@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Mobile Number Validation With JavaScript</title>
+</head>
+<body>
+		<center>
+			<h2>Mobile Number Validation In JavaScript</h2>
+			<form action="success.html" name="myform" method="post" onsubmit="return validateMobile()">
+					Enter Mobile Number:<input type="text" name="mobile" required>
+					<span id="Error"></span><p></p>
+					<input type="submit" value="submit">
+			</form>
+		</center>
+		<script type="text/javascript">
+			function validateMobile(){
+				var mobile=document.myform.mobile.value;
+				if(mobile.length==10){
+					return true;
+				}
+				else{
+					alert("Please Enter 10 digit Valid Mobile Number");
+					return false;
+				}
+			}
+			function validate(i){
+				var keyCode=i.keyCode || i.which;
+				var Error=document.getElementById("Error");
+				Error.innerHTML="";
+				var regex=/^[0-9]+$/;
+				var isValid=regex.test(String.fromCharCode(keyCode));
+				if(!isValid){
+					Error.innerHTML="";
+				}
+				return isValid;
+			}
+
+			</script>
+</body>
+</html>
